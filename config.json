@@ -1,0 +1,103 @@
+{
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "{{BASE_URL}}/images/icon.png",
+    "iconSmall": "{{BASE_URL}}/images/icon.png",
+    "category": "message"
+  },
+  "type": "Rest",
+  "lang": {
+    "en-US": {
+      "name": "cateste002",
+      "description": "Custom Activity: cateste002"
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [
+        {
+          "contactKey": "{{Event.contactKey}}"
+        },
+        {
+          "phoneNumber": "{{Event.phoneNumber}}"
+        },
+        {
+          "message": "{{message}}"
+        }
+      ],
+      "outArguments": []
+    }
+  },
+  "configurationArguments": {
+    "save": {
+      "url": "{{BASE_URL}}/save"
+    },
+    "publish": {
+      "url": "{{BASE_URL}}/publish"
+    },
+    "validate": {
+      "url": "{{BASE_URL}}/validate"
+    },
+    "stop": {
+      "url": "{{BASE_URL}}/stop"
+    }
+  },
+  "wizardSteps": [
+    {
+      "label": "Configure",
+      "key": "configure"
+    }
+  ],
+  "userInterfaces": {
+    "configModal": {
+      "url": "{{BASE_URL}}/ui/index.html",
+      "height": 600,
+      "width": 800
+    },
+    "runningHover": {
+      "url": "{{BASE_URL}}/ui/running.html"
+    },
+    "runningModal": {
+      "url": "{{BASE_URL}}/ui/running.html"
+    }
+  },
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [
+          {
+            "contactKey": {
+              "dataType": "Text",
+              "direction": "in",
+              "access": "visible"
+            }
+          },
+          {
+            "phoneNumber": {
+              "dataType": "Phone",
+              "direction": "in",
+              "access": "visible"
+            }
+          },
+          {
+            "message": {
+              "dataType": "Text",
+              "direction": "in",
+              "access": "visible"
+            }
+          }
+        ],
+        "outArguments": []
+      }
+    }
+  },
+  "errors": [
+    {
+      "message": "An error occurred",
+      "direction": "outbound"
+    }
+  ],
+  "edit": {
+    "url": "{{BASE_URL}}/ui/index.html"
+  }
+}
